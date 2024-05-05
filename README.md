@@ -31,9 +31,10 @@ Event Tracker is a weekend project aimed at creating a RESTful API for tracking 
 
 ## REST route URIs 
 
-- Return 		  Type	   Route					Functionality
-- Book   		  GET 	   api/books/{id}			Gets one post by Id
-- List <Book>	  GET 	   api/books				Gets all books in the database
-- Book		  	  POST     api/books				Creates a new book entity
-- Book            PUT	   api/books/{id}			Updates books already in the database
-- void            DELETE   api/books/{id}			Deletes books from the database	
+| Return 		| Type	 | Route				  |	Functionality						  |
+|---------------|--------|------------------------|---------------------------------------|
+| Book   		| GET 	 | api/books/{id}		  | Gets one post by Id					  |
+| List <Book>	| GET 	 | api/books			  | Gets all books in the database		  |
+| Book		  	| POST   | api/books			  | Creates a new book entity		      |
+| Book          | PUT	 | api/books/{id}		  | Updates books already in the database |
+| void          | DELETE | api/books/{id}		  | Deletes books from the database	      |
