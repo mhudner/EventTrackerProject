@@ -3,11 +3,11 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title></title>
+	<title>EventTrackerProject</title>
 </head>
 <body>
 
-# EventTrackerProject
+
 
 ## Description of Project
 
@@ -28,15 +28,15 @@ Event Tracker is a weekend project aimed at creating a RESTful API for tracking 
 
 ## Lessons Learned
 
-- Entity Modeling: Understanding how to create Java entity classes that map to database tables using JPA.
+1. Entity Modeling: Understanding how to create Java entity classes that map to database tables using JPA.
 
-- Spring Boot Configuration: Configuring a Spring Boot application to expose REST API endpoints and handle JSON data.
+2. Spring Boot Configuration: Configuring a Spring Boot application to expose REST API endpoints and handle JSON data.
 
-- CRUD Operations: Implementing Create, Read, Update, and Delete operations for managing events.
+3. CRUD Operations: Implementing Create, Read, Update, and Delete operations for managing events.
 
-- Database Design: Designing a database schema using MySQL Workbench and forward engineering it.
+4. Database Design: Designing a database schema using MySQL Workbench and forward engineering it.
 
-- Deployment: Deploying a Spring Boot application to an AWS EC2 instance and linking it to a portfolio website.
+5. Deployment: Deploying a Spring Boot application to an AWS EC2 instance and linking it to a portfolio website.
 
 ## REST route URIs 
 
