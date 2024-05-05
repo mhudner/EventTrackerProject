@@ -1,3 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+
 # EventTrackerProject
 
 ## Description of Project
@@ -38,3 +47,5 @@ Event Tracker is a weekend project aimed at creating a RESTful API for tracking 
 | Book		  	| POST   | api/books			  | Creates a new book entity		      |
 | Book          | PUT	 | api/books/{id}		  | Updates books already in the database |
 | void          | DELETE | api/books/{id}		  | Deletes books from the database	      |
+</body>
+</html>
