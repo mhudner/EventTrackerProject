@@ -7,11 +7,11 @@
 </head>
 <body>
 
-# EventTrackerProject
+# Event Tracker Project
 
 ## Description of Project
 
-Event Tracker is a weekend project aimed at creating a RESTful API for tracking various events or activities. We were told to create a single table with trackable data 
+Event Tracker is a weekend project aimed at creating a RESTful API for monitoring various events or activities. We were asked to create a single table with trackable fields of data. I chose to inventory books I've read, I'm in the process of reading or books I own and would like to read in the future.
 
 ## Technologies Used
 
@@ -23,9 +23,6 @@ Event Tracker is a weekend project aimed at creating a RESTful API for tracking 
 - Postman: Testing REST API endpoints.
 - AWS EC2: Deployment of the application.
 
-
-
-
 ## Lessons Learned
 
 1. Entity Modeling: Understanding how to create Java entity classes that map to database tables using JPA.
@@ -36,14 +33,12 @@ Event Tracker is a weekend project aimed at creating a RESTful API for tracking 
 
 4. Database Design: Designing a database schema using MySQL Workbench and forward engineering it.
 
-5. Deployment: Deploying a Spring Boot application to an AWS EC2 instance and linking it to a portfolio website.
-
 ## REST route URIs 
 
 | Return 		| Type	 | Route				  |	Functionality						  |
 |---------------|--------|------------------------|---------------------------------------|
 | Book   		| GET 	 | api/books/{id}		  | Gets one post by Id					  |
-| List <Book>	| GET 	 | api/books			  | Gets all books in the database		  |
+| List < Book >	| GET 	 | api/books			  | Gets all books in the database		  |
 | Book		  	| POST   | api/books			  | Creates a new book entity		      |
 | Book          | PUT	 | api/books/{id}		  | Updates books already in the database |
 | void          | DELETE | api/books/{id}		  | Deletes books from the database	      |
