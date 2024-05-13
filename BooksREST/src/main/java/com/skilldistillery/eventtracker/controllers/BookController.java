@@ -61,7 +61,20 @@ public class BookController {
 		bookService.delete(id);
 	}
 	
-	
+    @GetMapping("books/genre/{genre}")
+    public List<Book> findByGenre(@PathVariable("genre") String genre){
+        return bookService.findByGenre(genre);
+    }
+    
+    @GetMapping("books/author/{author}")
+    public List<Book> findByAuthor(@PathVariable("author") String author){
+        return bookService.findByAuthor(author);
+    }
+    
+    @GetMapping("books/readstatus/{status}")
+    public List<Book> findByReadStatus(@PathVariable("status") String status){
+        return bookService.findByReadStatus(status);
+    }
 	
 	
 	

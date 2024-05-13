@@ -34,11 +34,11 @@ public class Book {
 	private String readStatus;
 	
 	@Column(name="date_started")
-	@UpdateTimestamp
+	
 	private LocalDate dateStarted;
 
 	@Column(name="date_finished")
-	@UpdateTimestamp
+	
 	private LocalDate dateFinished;
 	
 	private String rating;
@@ -84,7 +84,7 @@ public class Book {
 		this.genre = genre;
 	}
 
-	public int getPublicationYear() {
+	public Integer getPublicationYear() {
 		return publicationYear;
 	}
 

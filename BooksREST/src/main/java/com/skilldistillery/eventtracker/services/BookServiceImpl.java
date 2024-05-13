@@ -4,8 +4,6 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
 
 import com.skilldistillery.eventtracker.entities.Book;
 import com.skilldistillery.eventtracker.repositories.BooksRepository;
@@ -31,7 +29,24 @@ public class BookServiceImpl implements BookService{
 		List<Book> books = booksRepo.findAll();
 		return books;
 	}
+	
+	
 
+    @Override
+    public List<Book> findByGenre(String genre) {
+        return booksRepo.findByGenre(genre);
+    }
+
+    @Override
+    public List<Book> findByAuthor(String author) {
+        return booksRepo.findByAuthor(author);
+    }
+
+    @Override
+    public List<Book> findByReadStatus(String status) {
+        return booksRepo.findByReadStatus(status);
+    }
+	
 	@Override
 	public Book create(Book book) {
 		booksRepo.save(book);
@@ -59,5 +74,6 @@ public class BookServiceImpl implements BookService{
 		booksRepo.deleteById(id);
 	
 	}
+
 
 }

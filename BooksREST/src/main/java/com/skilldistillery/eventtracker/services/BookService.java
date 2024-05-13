@@ -16,4 +16,10 @@ public interface BookService {
 
 	void delete(int id);
 
+	List<Book> findByGenre(String genre);
+
+	List<Book> findByAuthor(String author);
+
+	List<Book> findByReadStatus(String status);
+
 }
