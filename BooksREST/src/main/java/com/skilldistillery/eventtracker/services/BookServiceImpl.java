@@ -72,7 +72,7 @@ public class BookServiceImpl implements BookService{
 	@Override
 	public void delete(int id) {
 		booksRepo.deleteById(id);
-	
+		
 	}
 
 
