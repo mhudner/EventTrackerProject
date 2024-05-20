@@ -12,11 +12,13 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './book-list.component.css',
 })
 export class BookListComponent implements OnInit {
+
   title: string = 'ngBooks';
   selectedBook: Book | null = null;
   bookList: Book[] = [];
   newBook: Book = new Book();
   editBook: Book | null = null;
+  authors: Book[] = []; 
 
   //CONSTRUCTOR
   constructor(private booksService: BooksService) {}
@@ -103,5 +105,40 @@ export class BookListComponent implements OnInit {
 
   selectBook(book: Book) {
     this.selectedBook = book;
+  }
+
+  findByGenre(genres: Book) {
+    this.booksService.findByGenre(genres).subscribe({
+        next: () => {
+          this.reload();
+        },
+        error: (err) => {
+          console.error('Error deleting book:', err);
+        },
+      });
+    
+  }
+  findByAuthor(authors: Book) {
+    this.booksService.findByAuthor(authors).subscribe({
+      next: (dbBooks: Book[]) => {
+        console.log(dbBooks)
+        this.bookList = dbBooks;
+      },
+        error: (err) => {
+          console.error('Error deleting book:', err);
+        },
+      });
+    
+  }
+  findByStaturs(readStatus: Book) {
+    this.booksService.findByStatus(readStatus).subscribe({
+        next: () => {
+          this.reload();
+        },
+        error: (err) => {
+          console.error('Error deleting book:', err);
+        },
+      });
+    
   }
 }

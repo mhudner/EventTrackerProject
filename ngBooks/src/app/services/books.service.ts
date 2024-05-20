@@ -55,4 +55,35 @@ export class BooksService {
       // })
     );
   }
+
+  findByGenre(genre : Book): Observable<Book[]>{
+    return this.http.get<Book[]>(this.url + "/genre/" + genre).pipe(
+      catchError((err: any) => {
+        console.log(err);
+        return throwError(
+          () => new Error('BooksService.findByGenre(): error retrieving book: ' + err)
+        );
+      })
+    )};
+
+    findByAuthor(author : Book): Observable<Book[]>{
+      return this.http.get<Book[]>(this.url + "/author/" + author).pipe(
+        catchError((err: any) => {
+          console.log(err);
+          return throwError(
+            () => new Error('BooksService.findByAuthor(): error retrieving book: ' + err)
+          );
+        })
+      )};
+
+      findByStatus(readStatus : Book): Observable<Book[]>{
+        return this.http.get<Book[]>(this.url + "/readstatus/" + readStatus).pipe(
+          catchError((err: any) => {
+            console.log(err);
+            return throwError(
+              () => new Error('BooksService.findByStatus(): error retrieving book: ' + err)
+            );
+          })
+        )};
+  
 }
