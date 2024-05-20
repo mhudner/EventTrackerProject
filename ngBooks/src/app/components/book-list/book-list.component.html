@@ -1,0 +1,109 @@
+<h1>My Library</h1>
+<div id="bookList"></div>
+<div *ngIf="!selectedBook">
+    <table class="table table-striped table-hover ">
+        <thead class="table-dark">
+            <tr>
+                <td>Id</td>
+                <td>Title</td>
+                <td>Author</td>
+                <td>Genre</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr
+        *ngFor="
+          let book of bookList" (click)="selectBook(book)">
+        <td>{{ book.id }}</td>
+        <td>{{ book.title }}</td>
+        <td>{{ book.author }}</td>
+        <td>{{ book.genre }}</td>
+      </tr>
+        </tbody>
+    </table>
+</div>
+
+<div *ngIf="selectedBook && !editBook">
+    <h2>Id: {{selectedBook.id}}</h2>
+    <p>Title: {{selectedBook.title}}</p>
+    <p>Author: {{selectedBook.author}}</p>
+    <p>Genre: {{selectedBook.genre}}</p>
+    <p>Publication Year: {{selectedBook.publicationYear}}</p>
+    <p>Description: {{selectedBook.description}}</p>
+    <p>Completed: {{selectedBook.readStatus}}</p>
+    <p>Date Started: {{selectedBook.dateStarted}}</p>
+    <p>Date Finished: {{selectedBook.dateFinished}}</p>
+    <p>Rating: {{selectedBook.rating}}</p>
+    <button class="btn bg-primary" (click)="goBack()">Back To Library</button>
+    <button class="btn bg-primary" (click)="setEditBook()">Edit</button>
+</div>
+
+
+<div *ngIf="editBook"> 
+
+    <form name="editForm">
+        <label for="title">Title: </label>
+        <div class="form-floating">
+            <input class="form-control" type="text" name="title" [(ngModel)]="editBook.title">
+        </div>
+        <label for="author">Author: </label>
+        <div class="form-floating">
+             <input class="form-control" type="text" name="author" [(ngModel)]="editBook.author">
+        </div>
+        <label for="genre">Genre: </label>
+        <div class="form-floating">
+             <input class="form-control" type="text" name="genre" [(ngModel)]="editBook.genre">
+        </div>
+        <label for="publicationYear">Publication Year: </label>
+        <div class="form-floating">
+             <input class="form-control" type="text" name="publicationYear" [(ngModel)]="editBook.publicationYear">
+        </div>
+        <label for="description">Description: </label>
+        <div class="form-floating">
+             <input class="form-control" type="text" name="description" [(ngModel)]="editBook.description">
+        </div>
+        <label for="readStatus">Read Status: </label>
+        <div class="form-floating">
+             <input class="form-control" type="text" name="readStatus" [(ngModel)]="editBook.readStatus">
+        </div>
+        <label for="dateStarted">Date Started: </label>
+        <div class="form-floating">
+             <input class="form-control" type="date" name="dateStarted" [(ngModel)]="editBook.dateStarted">
+        </div>
+        <label for="dateFinished">Date Finished: </label>
+        <div class="form-floating">
+             <input class="form-control" type="date" name="dateFinished" [(ngModel)]="editBook.dateFinished">
+        </div>
+        <label for="rating">Rating: </label>
+        <div class="form-floating">
+             <input class="form-control" type="text" name="rating" [(ngModel)]="editBook.rating">
+        </div>
+        <br>
+        <button class="btn bg-primary" (click)="editBook = null">Cancel</button>
+        <button class="btn bg-success" (click)="updateBook(editBook)">Save</button>
+    </form>
+    
+    </div>
+
+
+<div *ngIf="!selectedBook">
+
+    <h1>Add Book to Library</h1>
+
+    <div *ngIf="!selectedBook" >
+        <form class="col">
+            Title: <input class="form-control col" type="text" name="title" [(ngModel)]="newBook.title"><br>
+            Author: <input class="form-control col" type="text" name="author" [(ngModel)]="newBook.author"><br>
+            Genre: <input class="form-control col" type="text" name="genre" [(ngModel)]="newBook.genre"><br>
+            Publication Year: <input class="form-control col" type="text" name="publicationYear" [(ngModel)]="newBook.publicationYear"><br>
+            Description: <input class="form-control col" type="text" name="description" [(ngModel)]="newBook.description"><br>
+            Read Status: <input class="form-control col" type="text" name="readStatus" [(ngModel)]="newBook.readStatus"><br>
+            Date Started: <input class="form-control col" type="date" name="dateStarted" [(ngModel)]="newBook.dateStarted"><br>
+            Date Finished: <input class="form-control col" type="date" name="dateFinished" [(ngModel)]="newBook.dateFinished"><br>
+            Rating: <input class="form-control col" type="text" name="rating" [(ngModel)]="newBook.rating"><br>
+
+            <button class="btn bg-primary col" (click)="addBook(newBook)">Add New Book</button>
+        </form>
+    </div>
+
+
